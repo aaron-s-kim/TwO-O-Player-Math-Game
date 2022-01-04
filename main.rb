@@ -13,28 +13,25 @@ require './player'
 require './question'
 
 # create new player objects
-p1 = Player.new(3)
-p2 = Player.new(3)
-# create game with player objects
-g = Game.new(p1, p2)
+p1 = Player.new('mario', 1, 3)
+p2 = Player.new('luigi', 2, 3)
 
-counter = 0
+g = Game.new(p1, p2) # create game with player objects
+
+# game loop
 loop do
   q = Question.new
   g.turn(q)
-  p q.output
   g.hp(p1.hp, p2.hp, p1.hp_max)
-  # output = q.math_question
-
-  counter += 1
-  if counter == 2
+  
+  if p1.hp == 0
+    g.winner(p2)
+    break
+  elsif p2.hp == 0
+    g.winner(p1)
     break
   end
 end
-
-
-# p g.player1.hp_current
-# p g.player1.hp_max
 
 
 # Example prompt

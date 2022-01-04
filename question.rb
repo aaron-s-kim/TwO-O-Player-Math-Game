@@ -15,13 +15,13 @@ class Question
     "What does #{self.rand_num1} plus #{self.rand_num2} equal?"
   end
 
-  def input
+  def input_from_user
     print "> "
     # gets.chomp reads ARGV first, then falls back to $stdin; $stdin reads user input
     self.player_input = $stdin.gets.chomp.to_i # .to_i converts str to int of 0
   end
 
-  def output
+  def check_answer
     if @player_input == self.answer_correct
       "YES! You are correct."
     else
@@ -29,12 +29,4 @@ class Question
     end
   end
 
-  # def ma
-
 end
-
-# q = Question.new
-# print q.rand_num1, ' + ', q.rand_num2, ' = ', q.answer_correct, "\n"
-# q.math_question
-
-
