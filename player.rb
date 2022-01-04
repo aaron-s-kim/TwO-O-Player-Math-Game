@@ -12,6 +12,7 @@ class Player
     @hp_max = h
     @hp = h
   end
+  
 
 end
 

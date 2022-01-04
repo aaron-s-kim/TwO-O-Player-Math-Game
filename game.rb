@@ -33,8 +33,8 @@ class Game
     end
   end
 
-  def hp(hp1, hp2, max)
-    puts "P1: #{hp1}/#{max} vs P2: #{hp2}/#{max}"
+  def hp
+    puts "P1: #{p1.hp}/#{p1.hp_max} vs P2: #{p2.hp}/#{p2.hp_max}"
   end
 
   def winner(player)

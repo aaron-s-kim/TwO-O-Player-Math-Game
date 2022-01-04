@@ -22,7 +22,7 @@ g = Game.new(p1, p2) # create game with player objects
 loop do
   q = Question.new
   g.turn(q)
-  g.hp(p1.hp, p2.hp, p1.hp_max)
+  g.hp
   
   if p1.hp == 0
     g.winner(p2)
